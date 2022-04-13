@@ -2,7 +2,7 @@
   "name": "tree-hole",
   "version": "1.0.0",
   "private": true,
-  "description": "love-tree-hole",
+  "description": "给琳琳的微信小程序。",
   "templateInfo": {
     "name": "taro-ui",
     "typescript": true,

@@ -1,0 +1,163 @@
+// margin padding 原子化
+@numberPointsSet1: 0, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 32, 36, 40, 48, 52, 60,
+  64, 80, 90, 92, 96, 100, 128, 180, 190, 200, 220, 240, 250, 260, 280, 290, 300,
+  400, 500, 600;
+.loopMarginPadding(@data, @i: 1) when (@i <= length(@data)) {
+  @item: extract(@data, @i);
+
+  .p_@{item} {
+    padding: (1rpx * @item);
+  }
+  .p_t_@{item} {
+    padding-top: (1rpx * @item);
+  }
+  .p_r_@{item} {
+    padding-right: (1rpx * @item);
+  }
+  .p_b_@{item} {
+    padding-bottom: (1rpx * @item);
+  }
+  .p_l_@{item} {
+    padding-left: (1rpx * @item);
+  }
+  .p_tb_@{item} {
+    padding-top: (1rpx * @item);
+    padding-bottom: (1rpx * @item);
+  }
+  .p_lr_@{item} {
+    padding-left: (1rpx * @item);
+    padding-right: (1rpx * @item);
+  }
+  .m_@{item} {
+    margin: (1rpx * @item);
+  }
+  .m_t_@{item} {
+    margin-top: (1rpx * @item);
+  }
+  .m_r_@{item} {
+    margin-right: (1rpx * @item);
+  }
+  .m_b_@{item} {
+    margin-bottom: (1rpx * @item);
+  }
+  .m_l_@{item} {
+    margin-left: (1rpx * @item);
+  }
+  .m_tb_@{item} {
+    margin-top: (1rpx * @item);
+    margin-bottom: (1rpx * @item);
+  }
+  .m_lr_@{item} {
+    margin-left: (1rpx * @item);
+    margin-right: (1rpx * @item);
+  }
+  .loopMarginPadding(@data, @i + 1); // 递归调用自身
+}
+.loopMarginPadding(@numberPointsSet1);
+.m_l_auto {
+  margin-left: auto;
+}
+.m_r_auto {
+  margin-right: auto;
+}
+.m_lr_auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@numberPointsSet2: 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 32, 36, 48, 64;
+.loopBorderRadius(@data, @i: 1) when (@i <= length(@data)) {
+  @item: extract(@data, @i);
+
+  .brr_@{item} {
+    border-radius: (1rpx * @item);
+  }
+  .loopBorderRadius(@data, @i + 1);
+}
+.loopBorderRadius(@numberPointsSet2);
+
+// 字重 font-weight
+@fontWeightPoints: 300, normal, 400, bold, 500, bolder, 700, 900;
+.loopFontWeight(@data, @i: 1) when(@i =< length(@data)) {
+  @item: extract(@data, @i);
+  .fw_@{item} {
+    font-weight: @item;
+  }
+  .loopFontWeight(@data, (@i + 1));
+}
+.loopFontWeight(@fontWeightPoints);
+
+// 字体大小 font-size
+@fontSizePoints: 12, 14, 16, 18, 20, 24, 26, 28, 32, 36, 42, 48, 64, 72, 81, 100;
+.loopFontSize(@data, @i: 1) when(@i =< length(@data)) {
+  @item: extract(@data, @i);
+  .fs_@{item} {
+    font-size: (1rpx * @item);
+  }
+  .loopFontSize(@data, (@i + 1));
+}
+.loopFontSize(@fontSizePoints);
+
+// 百分比宽度、高度
+@widthPoints: 5, 10, 15, 20, 25, 30, 33, 66, 80, 90, 100;
+.loopPercentageWidthHeight(@data, @i: 1) when(@i =< length(@data)) {
+  @item: extract(@data, @i);
+  .w_p@{item} {
+    width: (1% * @item);
+  }
+  .h_p@{item} {
+    height: (1% * @item);
+  }
+  .loopPercentageWidthHeight(@data, (@i + 1));
+}
+.loopPercentageWidthHeight(@widthPoints);
+.w_fit_cotent {
+  width: fit-content;
+}
+.w_full {
+  width: 100%;
+}
+.h_full {
+  height: 100%;
+}
+
+.loopPixelWidthHeight(@data, @i: 1) when(@i =< length(@data)) {
+  @item: extract(@data, @i);
+  .w_@{item}rpx {
+    width: (1rpx * @item);
+  }
+  .h_@{item}rpx {
+    height: (1rpx * @item);
+  }
+  .loopPixelWidthHeight(@data, (@i + 1));
+}
+.loopPixelWidthHeight(@numberPointsSet1);
+
+.text_center {
+  text-align: center;
+}
+.text_left {
+  text-align: left;
+}
+.text_right {
+  text-align: right;
+}
+.text_noselect {
+  user-select: none;
+}
+.to_ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.inline {
+  display: inline;
+}
+.inline_block {
+  display: inline-block;
+}
+
+.cursor_rpxr {
+  cursor: pointer;
+}

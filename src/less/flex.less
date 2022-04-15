@@ -1,0 +1,67 @@
+/* ----- flex 工具类 ------- */
+//   Author: ShenQingchuan
+
+.flex_row {
+  display: flex;
+  flex-direction: row;
+}
+.flex_col {
+  display: flex;
+  flex-direction: column;
+}
+.flex_row,
+.flex_col {
+  &.center_all {
+    justify-content: center;
+    align-items: center;
+  }
+  // justify:
+  &.jyct_center {
+    justify-content: center;
+  }
+  &.jyct_start {
+    justify-content: flex-start;
+  }
+  &.jyct_end {
+    justify-content: flex-end;
+  }
+  &.jyct_btwn {
+    justify-content: space-between;
+  }
+  &.jyct_arnd {
+    justify-content: space-around;
+  }
+  // align-items:
+  &.anis_center {
+    align-items: center;
+  }
+  &.anis_start {
+    align-items: flex-start;
+  }
+  &.anis_end {
+    align-items: flex-end;
+  }
+  // justify-self:
+  .jysf_center {
+    justify-self: center;
+  }
+  .jysf_start {
+    justify-self: flex-start;
+  }
+  .jysf_end {
+    justify-self: flex-end;
+  }
+  // align-self:
+  .ansf_center {
+    align-self: center;
+  }
+  .ansf_start {
+    align-self: flex-start;
+  }
+  .ansf_end {
+    align-self: flex-end;
+  }
+}
+.flex_1 {
+  flex: 1;
+}

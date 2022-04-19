@@ -4,17 +4,20 @@ import s from './styles.module.less';
 
 export interface AppGridItemProps {
   name: string;
-  width: string;
+  grid: number;
   height: string;
 }
 
 export const AppGridItem: FC<AppGridItemProps> = (props) => {
-  const { width, height, children } = props;
+  const { grid, height, children } = props;
 
   return (
     <View 
       className={s.app_grid_item}
-      style={{ width, height }}
+      style={{
+        width: `${6.25 * grid}%`,
+        height 
+      }}
     >
       {children}
     </View>

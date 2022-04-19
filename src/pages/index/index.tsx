@@ -9,9 +9,10 @@ export default function IndexPage() {
   return (
     <View className={s.page_index}>
       <View className={s.page_index__app_grid}>
-        <AppGridItem
+        <AppGridItem 
           name="纪念日"
-          width='360rpx' height='240rpx'
+          grid={8}
+          height='240rpx'
         >
           <AppAniversary />
         </AppGridItem>

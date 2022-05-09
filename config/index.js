@@ -1,7 +1,12 @@
+const path = require('path')
+
 const config = {
   projectName: 'tree-hole',
   date: '2022-4-11',
   designWidth: 750,
+  alias: {
+    'src': path.resolve(__dirname, '../src'),
+  },
   deviceRatio: {
     640: 2.34 / 2,
     750: 1,

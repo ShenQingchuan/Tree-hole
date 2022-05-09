@@ -1,21 +1,27 @@
 import { View } from '@tarojs/components'
-import { AppGridItem } from '../../components/appGridItem'
-import { AppAniversary } from '../../applications/anniversary'
-
-import "taro-ui/dist/style/components/button.scss" // 按需引入
+import { FlexView } from 'src/components/flexView'
+import { AppWidget } from 'src/components/appWidget'
+import { AppAniversary } from 'src/applications/anniversary'
+import { AppGallery } from 'src/applications/gallery'
 import s from './styles.module.less'
 
 export default function IndexPage() {
   return (
     <View className={s.page_index}>
       <View className={s.page_index__app_grid}>
-        <AppGridItem 
-          name="纪念日"
-          grid={8}
-          height='240rpx'
-        >
+        <AppWidget name='纪念日' tag='anniversary' grid={12} height='240rpx'>
           <AppAniversary />
-        </AppGridItem>
+        </AppWidget>
+
+        <FlexView className='p_lr_16' grid={12} direction='column' justify='start'>
+          <AppWidget  name='画廊'  tag='gallery' grid={24}  height='120rpx'>
+            <AppGallery />
+          </AppWidget>
+          <FlexView className='p_lr_16 p_t_24 p_b_8 flex_1' direction='row' grid={24} justify='space-between'>
+            <AppWidget name='密记'  tag='diary' grid={8}  height='70rpx' noShadow />
+            <AppWidget name='许愿池'  tag='wishing_well' grid={8}  height='70rpx' noShadow />
+          </FlexView>
+        </FlexView>
       </View>
     </View>
   )

@@ -1,0 +1,34 @@
+@import '../../less/color.less';
+@import '../../less/utilities.less';
+
+.app_grid_item {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 20rpx;
+  box-shadow: 10rpx 10rpx 10rpx @N300;
+  
+  &:global(.no_shadow) {
+    box-shadow: none;
+  }
+
+  &:global(.anniversary) {
+    background: url('../../assets/anniversary-highlight-background.jpg') center 40% no-repeat;
+  }
+  &:global(.gallery) {
+    .background_img_fade(
+      0.2,
+      url('../../assets/gallery-highlight-background.jpeg'),
+      center, center
+    );
+  }
+  &:global(.diary) {
+    width: 60rpx;
+    background: url('../../assets/diary_icon.png') center no-repeat;
+    background-size: contain;
+  }
+  &:global(.wishing_well) {
+    width: 60rpx;
+    background: url('../../assets/wishing_well_icon.png') center 10% no-repeat;
+    background-size: cover;
+  }
+}

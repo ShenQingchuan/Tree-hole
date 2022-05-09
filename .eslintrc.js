@@ -1,6 +1,6 @@
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
-  root: __dirname,
+  root: true,
   ignorePatterns: [
     'node_modules',
     'dist',

@@ -1,4 +1,5 @@
-import { View } from '@tarojs/components'
+import { View, Text } from '@tarojs/components'
+import { AtDivider } from 'taro-ui'
 import { FlexView } from 'src/components/flexView'
 import { AppWidget } from 'src/components/appWidget'
 import { AppAniversary } from 'src/applications/anniversary'
@@ -23,6 +24,11 @@ export default function IndexPage() {
           </FlexView>
         </FlexView>
       </View>
+
+      <AtDivider>
+        <View className='at-icon at-icon-loading-2'></View>
+        <Text className='fs_24 tc_n600 m_l_12'>🚧 树屋继续施工中 ...</Text>
+      </AtDivider>
     </View>
   )
 }
